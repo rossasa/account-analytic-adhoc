@@ -52,6 +52,7 @@ class account_analytic_account(osv.osv):
                 'currency_id': currency_id,
                 'journal_id': len(journal_ids) and journal_ids[0] or False,
                 'date_invoice': contract.recurring_next_date,
+                'date_due': contract.next_invoice_due_date,
                 'origin': contract.code,
                 'fiscal_position': fpos and fpos.id,
                 'company_id': contract.company_id.id or False,
