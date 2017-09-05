@@ -11,7 +11,7 @@
                         <button name="set_close" string="Close Contract" type="object" states="open,pending"/>
                         <button name="set_open" string="Set In Progress" type="object" states="pending,close,cancelled,draft"/>
                         <button name="set_cancel" string="Cancel Contract" type="object" states="open,pending"/>
-                        <field name="state" readonly="1" widget="statusbar" statusbar_visible="open,pending,close" statusbar_colors="{'pending':'red', 'template':'blue}"/>
+                        <field name="state" readonly="1" widget="statusbar" statusbar_visible="open,pending,close" statusbar_colors="{'pending':'red', 'template':'blue'}"/>
                     </header>
                     <sheet string="Analytic Account">
                         <div class="oe_right oe_button_box" name="buttons">
@@ -77,7 +77,7 @@
                     <div attrs="{'invisible': [('recurring_invoices','=',False)]}">
                         <field name="recurring_invoice_line_ids">
                             <tree string="Account Analytic Lines" editable="bottom">
-                                <field name="product_id" on_change="product_id_change(product_id, uom_id, quantity, False, parent.partner_id, False, parent.pricelist_id, parent.company_id)"/>
+                                <field name="product_id" on_change="product_id_change(product_id, uom_id, quantity, False, parent.partner_id, False, parent.pricelist_id, parent.company_id, {'purchase': True})"/>
                                 <field name="name"/>
                                 <field name="quantity"/>
                                 <field name="uom_id"/>
